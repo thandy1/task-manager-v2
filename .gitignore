@@ -1,2 +1,27 @@
 # Documentation
 docs/*
+
+# IntelliJ
+backend/.idea/
+**/.idea/
+*.iml
+
+# Maven
+backend/target/
+
+# Spring Boot - sensitive configuration
+backend/src/main/resources/application.properties
+
+# Node / React
+frontend/node_modules/
+frontend/build/
+frontend/.env
+
+# Environment files
+.env
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
