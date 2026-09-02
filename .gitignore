@@ -1,5 +1,6 @@
 # Documentation
 docs/*
+backend/HELP.md
 
 # IntelliJ
 backend/.idea/
