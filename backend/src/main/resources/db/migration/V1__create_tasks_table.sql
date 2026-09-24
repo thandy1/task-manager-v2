@@ -2,7 +2,7 @@ CREATE TYPE task_status AS ENUM('TODO', 'IN_PROGRESS', 'DONE');
 CREATE TYPE task_priority AS ENUM('LOW', 'MEDIUM', 'HIGH');
 
 CREATE TABLE tasks (
-   id          SERIAL PRIMARY KEY,
+   id          BIGSERIAL PRIMARY KEY,
    title       VARCHAR(255) NOT NULL,
    description TEXT,
    status      task_status NOT NULL DEFAULT 'TODO',
