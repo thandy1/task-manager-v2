@@ -3,6 +3,8 @@ package com.taskmanager.backend.entity;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.time.LocalDate;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 // Marks this class as an Entity.
 @Entity
@@ -21,10 +23,14 @@ public class Task {
     private String description;
 
     @Enumerated(EnumType.STRING)
+    @JdbcTypeCode(SqlTypes.NAMED_ENUM)
     @Column(nullable = false)
     private TaskStatus status;
 
     @Enumerated(EnumType.STRING)
+    // This tells Hibernate to treat the field as a named enum type at the SQL level,
+    // which matches PostgreSQL's custom enum type.
+    @JdbcTypeCode(SqlTypes.NAMED_ENUM)
     @Column(nullable = false)
     private TaskPriority priority;
 
